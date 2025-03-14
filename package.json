@@ -1,0 +1,49 @@
+{
+  "name": "infosystem-server",
+  "version": "1.0.0",
+  "description": "Backend para el chatbot de Infosystem",
+  "type": "module",
+  "main": "dist/server/index.js",
+  "scripts": {
+    "start": "node dist/server/index.js",
+    "dev:server": "cross-env NODE_OPTIONS=\"--loader ts-node/esm\" ts-node-dev --respawn --transpile-only src/server/index.ts",
+    "dev:client": "vite",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:client": "vite build",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build": "npm run build:client && npm run build:server",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "framer-motion": "^10.18.0",
+    "mongodb": "^6.5.0",
+    "nodemailer": "^6.9.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3",
+    "twilio": "^4.23.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.28",
+    "@types/nodemailer": "^6.4.14",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6"
+  }
+}
