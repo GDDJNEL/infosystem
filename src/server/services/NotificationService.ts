@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import twilio from 'twilio';
-import { config } from '../config/config';
+import { config } from '../config/config.js';
 
 class NotificationService {
   private emailTransporter;

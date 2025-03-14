@@ -1,26 +1,24 @@
 import { MongoClient, Collection } from 'mongodb';
-import { config } from '../config/config';
-import { Conversation } from '../models/Conversation';
+import { config } from '../config/config.js';
 
 interface Conversation {
-  id: string;
-  timestamp: Date;
-  name?: string;
-  email?: string;
-  phone?: string;
-  query: string;
-  conversation: any[];
-  status: 'pending' | 'in-progress' | 'completed';
-  service: string;
+  userId: string;
+  messages: Array<{
+    role: string;
+    content: string;
+  }>;
+  createdAt: Date;
+  updatedAt: Date;
+  status?: 'pending' | 'in-progress' | 'completed';
 }
 
 export class ConversationService {
   private client: MongoClient;
   private collection: Collection<Conversation>;
 
-  constructor(client: MongoClient) {
-    this.client = client;
-    this.collection = client.db().collection<Conversation>('conversations');
+  constructor() {
+    this.client = new MongoClient(config.mongodb.uri);
+    this.collection = this.client.db().collection('conversations');
     this.initialize();
   }
 
@@ -100,4 +98,6 @@ export class ConversationService {
       throw error;
     }
   }
-} 
+}
+
+export const conversationService = new ConversationService(); 

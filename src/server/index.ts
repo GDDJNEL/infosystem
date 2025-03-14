@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
@@ -37,17 +37,17 @@ app.use('/api', notificationRoutes);
 app.use('/webhook', webhookRoutes);
 
 // Ruta de prueba
-app.get('/health', (req, res) => {
+app.get('/health', (req: Request, res: Response) => {
   res.status(200).json({ status: 'OK', message: 'Servidor funcionando correctamente' });
 });
 
 // Todas las demás rutas serán manejadas por React Router
-app.get('*', (req, res) => {
+app.get('*', (req: Request, res: Response) => {
   res.sendFile(join(__dirname, '../../dist/index.html'));
 });
 
 // Manejo de errores global
-app.use((err, req, res, next) => {
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);
   res.status(500).json({ error: 'Error interno del servidor' });
 });

@@ -1,7 +1,7 @@
 import express from 'express';
 import twilio from 'twilio';
-import { config } from '../config/config';
-import { notificationService } from '../services/NotificationService';
+import { config } from '../config/config.js';
+import { notificationService } from '../services/NotificationService.js';
 
 const router = express.Router();
 

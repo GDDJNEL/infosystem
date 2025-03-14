@@ -1,6 +1,6 @@
 import express from 'express';
-import { notificationService } from '../services/NotificationService';
-import { conversationService } from '../services/ConversationService';
+import { notificationService } from '../services/NotificationService.js';
+import { conversationService } from '../services/ConversationService.js';
 
 const router = express.Router();
 

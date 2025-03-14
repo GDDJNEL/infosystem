@@ -4,6 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/infosystem/',
   publicDir: path.join(__dirname, 'public'),
   root: path.join(__dirname, 'src'),
   build: {
