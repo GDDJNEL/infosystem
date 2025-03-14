@@ -38,7 +38,7 @@ const Header: React.FC = () => {
         
         <Link as={RouterLink} to="/" display="flex" alignItems="center">
           <Image
-            src="/images/logo.png"
+            src="/infosystem/images/logo.png"
             alt="Infosystem Logo"
             h={{ base: "30px", md: "40px" }}
             w="auto"

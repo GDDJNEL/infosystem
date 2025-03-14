@@ -156,7 +156,7 @@ const Home: React.FC = () => {
             </Stack>
             <Box flex={1} display="flex" alignItems="center" justifyContent="center">
               <Image
-                src="/images/hero.jpg"
+                src="/infosystem/images/hero.jpg"
                 alt="Soluciones Tecnológicas Infosystem"
                 maxW={{ base: "100%", md: "90%" }}
                 h={{ base: '300px', sm: '400px', lg: '450px' }}
