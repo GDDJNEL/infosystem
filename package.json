@@ -6,7 +6,7 @@
   "main": "dist/server/index.js",
   "scripts": {
     "start": "node dist/server/index.js",
-    "dev:server": "cross-env NODE_OPTIONS=\"--experimental-specifier-resolution=node --loader ts-node/esm\" ts-node-dev --respawn --transpile-only src/server/index.ts",
+    "dev:server": "cross-env NODE_OPTIONS=\"--experimental-specifier-resolution=node\" ts-node-dev --esm --respawn --transpile-only src/server/index.ts",
     "dev:client": "vite",
     "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
     "build:client": "vite build",
