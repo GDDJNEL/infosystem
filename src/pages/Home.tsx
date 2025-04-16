@@ -160,7 +160,6 @@ const Home: React.FC = () => {
                 alt="Soluciones Tecnológicas Infosystem"
                 maxW={{ base: "100%", md: "90%" }}
                 h={{ base: '300px', sm: '400px', lg: '450px' }}
-              />
                 objectFit="cover"
                 fallbackSrc="https://via.placeholder.com/800x600/00A650/FFFFFF?text=SOLUCIONES+TECNOLOGICAS"
                 borderRadius="xl"
